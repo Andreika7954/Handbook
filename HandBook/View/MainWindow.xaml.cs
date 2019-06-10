@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandBook.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace HandBook
         public MainWindow()
         {
             InitializeComponent();
+            // возможно тут надо подключить БД
+            List<Employee> employeesList = new List<Employee>
+            {
+                new Employee { Surname = "Иванов", Name = "Иван", Patronymic = "Иванович", Telephone = "+7 (499) 564-34-12", Birthday = new DateTime(1985, 4, 13)}
+            };
+
+            EmployeeGrid.ItemsSource = employeesList;
         }
     }
 }
